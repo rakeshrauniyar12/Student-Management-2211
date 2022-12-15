@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <style>
+        #container{
+          display: grid;
+            grid-template-columns:repeat(9,1fr);
+           grid-template-rows: 50px;
+            gap: 10px;
+            width: 98%;
+            margin: auto;
+            margin-right: 20px;
+        }
+        #container>button{
+            border: 1px solid white;
+            border-radius: 7px;
+            font-size: 20px;
+          padding: 12px 20px 20px 20px;
+         
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  let rr= document.createElement("div");
+    document.querySelector("body").append(rr);
+    document.querySelector("div").setAttribute("id","container");
+   
+    let btnprop=[
+        {btnname:"Primary",bgcolor:"#0176ff",color:"white"},
+        {btnname:"Secondary",bgcolor:"#6b747b",color:"white"},
+        {btnname:"Success",bgcolor:"#27a644",color:"white"},
+        {btnname:"Danger",bgcolor:"#db3443",color:"white"},
+        {btnname:"Warning",bgcolor:"#ffbf0a",color:"black"},
+        {btnname:"Info",bgcolor:"#14a1b8",color:"white"},
+        {btnname:"Light",bgcolor:"#fffefe",color:"black"},
+        {btnname:"Dark",bgcolor:"#33393f",color:"white"},
+        {btnname:"Link",bgcolor:"#fffefe",color:"blue"}
+    ]
+    btnprop.forEach(function(elem){
+        let btn=document.createElement("button");
+        document.querySelector("div").append(btn);
+      btn.style.backgroundColor=elem.bgcolor;
+      btn.style.color=elem.color;
+      btn.innerText=elem.btnname;
+     
+    })
+   console.log(document);
+</script>

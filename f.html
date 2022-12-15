@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+   let rr= document.createElement("form")
+    document.querySelector("body").append(rr)
+    arr=["Name","age","Gender","Email","MobileNo."]
+    arr1=["name","age","gender","email","mbl"]
+    for(let r=0;r<=4;r++){
+        if(r==2){
+          let ss=document.createElement("select");
+          ss.setAttribute("id","choose");
+          let op1=document.createElement("option");
+          let op2=document.createElement("option");
+          let op3=document.createElement("option");
+         op1.setAttribute("value","Gender");
+         op2.setAttribute("value","male");
+         op3.setAttribute("value","female");
+         op1.innerText="Select Gender";
+         op2.innerText="Male";
+         op3.innerText="Female";
+          document.querySelector("form").append(ss);
+          document.querySelector("select").append(op1);
+          document.querySelector("select").append(op2);
+          document.querySelector("select").append(op3);
+          let bb=document.createElement("br");
+   let bt=document.createElement("br");
+   document.querySelector("form").append(bb); 
+    document.querySelector("form").append(bt);
+        }
+        if(r!=2){
+            let hh= document.createElement("input");
+   hh.setAttribute("type","text");
+   hh.setAttribute("id",arr1[r]);
+   hh.setAttribute("placeholder",arr[r]);
+   let bb=document.createElement("br");
+   let bt=document.createElement("br");
+  
+    document.querySelector("form").append(hh);
+  
+    document.querySelector("form").append(bb); 
+    document.querySelector("form").append(bt); 
+        }
+       
+   }
+  
+ let ff=  document.createElement("input");
+ ff.setAttribute("type","submit");
+ document.querySelector("form").append(ff);
+ rr.addEventListener("submit",formSubmit);
+ arr2=[];
+ function formSubmit(event){
+     event.preventDefault();
+     let obj={
+         name:document.querySelector("#name").value,
+     age:document.querySelector("#age").value,
+    gender:document.querySelector("#choose").value,
+    email:document.querySelector("#email").value,
+    mobileNo:document.querySelector("#mbl").value
+    // console.log(output)
+     }
+   arr2.push(obj);
+   console.log(arr2); 
+ }
+
+</script>
